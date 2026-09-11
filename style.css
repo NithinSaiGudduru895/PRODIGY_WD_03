@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5e548e;
+    text-align: center;
+    min-height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main {
+    padding: 30px 15px;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.12rem);
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#turn {
+    margin-top: 15px;
+    color: #e0b1cb;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.game {
+    width: min(60vmin, 420px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vmin;
+}
+
+button {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
+}
+
+.box {
+    aspect-ratio: 1;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: clamp(2.5rem, 8vmin, 5rem);
+    color: #231942;
+    background-color: #9f86c0;
+}
+
+.box:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+#reset-button,
+#new-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+}
+
+.msg-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#msg {
+    color: #e0b1cb;
+    font-size: clamp(2rem, 8vmin, 5rem);
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .container {
+        min-height: 55vh;
+    }
+
+    #reset-button,
+    #new-btn {
+        font-size: 1rem;
+    }
+}
